@@ -12,7 +12,7 @@ outputs = { self, nixpkgs }:
     {
     devShells = forAllSystems (system:
         let
-        pkgs = nixpkgsFor.x86_64-linux;
+        pkgs = nixpkgsFor.${system};
         in
         {
         default = pkgs.haskellPackages.developPackage {
